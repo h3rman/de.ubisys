@@ -1,0 +1,13 @@
+{
+  "title": {
+    "en": "Second Switch Turned Off",
+    "nl": "2. Schakelaar Uitgezet"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=S2_5502||S2R_5502"
+    }
+  ]
+}

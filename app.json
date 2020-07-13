@@ -1,286 +1,150 @@
 {
-    "id": "de.ubisys",
-    "sdk": 2,
-    "name": {
-        "en": "Ubisys SmartHome ZigBee Devices"
-    },
-    "description": {
-        "en": "Support for Ubisys SmartHome ZigBee Devices"
-    },
-    "category": "lights",
-    "version": "1.0.2",
-    "compatibility": ">=1.5.4",
-    "author": {
-        "name": "Martin Brasse",
-        "email": "kasteleman@gmail.com"
-    },
-    "contributors": {
-      "developers": [
-          {
-              "name": "Richard Barkestam",
-              "email": "richard@barkestam.se"
-          }
-      ]
-    },
-    "contributing": {
-      "donate": {
-        "paypal": {
-          "username": "kasteleman"
-        }
+  "id": "de.ubisys",
+  "sdk": 2,
+  "name": {
+    "en": "Ubisys SmartHome ZigBee Devices"
+  },
+  "description": {
+    "en": "Support for Ubisys SmartHome ZigBee Devices"
+  },
+  "category": "lights",
+  "version": "1.0.2",
+  "compatibility": ">=1.5.4",
+  "author": {
+    "name": "Martin Brasse",
+    "email": "kasteleman@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Richard Barkestam",
+        "email": "richard@barkestam.se"
       }
-    },
-    "images": {
-      "large": "/assets/images/large.png",
-      "small": "/assets/images/small.png"
-    },
-    "drivers": [
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "kasteleman"
+      }
+    }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "flow": {
+    "triggers": [
       {
-        "id": "S1_5501",
-        "class": "socket",
-        "capabilities": ["onoff", "measure_power"],
-        "name": {
-          "en": "S1 POWER SWITCH"
+        "title": {
+          "en": "Second Switch Turned Off",
+          "nl": "2. Schakelaar Uitgezet"
         },
-        "images": {
-          "large": "drivers/S1_5501/assets/images/large.png",
-          "small": "drivers/S1_5501/assets/images/small.png"
-        },
-        "mobile": {
-          "components": [
-            {
-              "id": "icon"
-            },
-            {
-              "id": "toggle",
-              "capabilities": ["onoff"],
-              "options": {
-                "showTitle": true
-              }
-            },
-            {
-              "id": "sensor",
-              "capabilities": ["measure_power"]
-            }
-          ]
-        },
-        "zigbee": {
-          "manufacturerName": "ubisys",
-          "productId": "S1 (5501)",
-          "deviceId": 9,
-          "profileId": 260,
-          "learnmode": {
-            "instruction": {
-              "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
-              "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
-            }
-          }
-        },
-        "settings": [
+        "args": [
           {
-            "type": "group",
-            "label": {
-              "en": "Information"
-            },
-            "children": [
-              {
-                "id": "dateCode",
-                "type": "text",
-                "label": {
-                  "en": "Manufactured"
-                },
-                "value": ""
-              },
-              {
-                "id": "hwVersion",
-                "type": "number",
-                "label": {
-                  "en": "Hardware version"
-                },
-                "value": 0
-              }
-            ]
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=S2_5502||S2R_5502"
           }
-        ]
+        ],
+        "id": "switch2_turned_off"
       },
       {
-        "id": "S1R_5501",
-        "class": "socket",
-        "capabilities": ["onoff", "measure_power"],
-        "name": {
-          "en": "S1 RAILSWITCH"
+        "title": {
+          "en": "Second Switch Turned On",
+          "nl": "2. Schakelaar Aangezet"
         },
-        "images": {
-          "large": "drivers/S1R_5501/assets/images/large.png",
-          "small": "drivers/S1R_5501/assets/images/small.png"
-        },
-        "mobile": {
-          "components": [
-            {
-              "id": "icon"
-            },
-            {
-              "id": "toggle",
-              "capabilities": ["onoff"],
-              "options": {
-                "showTitle": true
-              }
-            },
-            {
-              "id": "sensor",
-              "capabilities": ["measure_power"]
-            }
-          ]
-        },
-        "zigbee": {
-          "manufacturerName": "ubisys",
-          "productId": "S1-R (5601)",
-          "deviceId": 9,
-          "profileId": 260,
-          "learnmode": {
-            "instruction": {
-              "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
-              "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
-            }
-          }
-        },
-        "settings": [
+        "args": [
           {
-            "type": "group",
-            "label": {
-              "en": "Information"
-            },
-            "children": [
-              {
-                "id": "dateCode",
-                "type": "text",
-                "label": {
-                  "en": "Manufactured"
-                },
-                "value": ""
-              },
-              {
-                "id": "hwVersion",
-                "type": "number",
-                "label": {
-                  "en": "Hardware version"
-                },
-                "value": 0
-              }
-            ]
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=S2_5502||S2R_5502"
+          }
+        ],
+        "id": "switch2_turned_on"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Second switch is !{{on|off}}",
+          "nl": "2. schakelaar is !{{ingeschakeld|uitgeschakeld}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=S2_5502||S2R_5502"
+          }
+        ],
+        "id": "switch2_is_on"
+      }
+    ],
+    "actions": [
+      {
+        "id": "turn_off_switch2",
+        "title": {
+          "en": "Turn Second Switch Off",
+          "nl": "Zet 2. Schakelaar uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=S2_5502||S2R_5502"
           }
         ]
       },
-    {
-      "id": "D1_5503",
-      "class": "light",
-      "capabilities": ["onoff", "dim", "measure_power"],
-      "name": {
-        "en": "D1 DIMMER"
-      },
-      "images": {
-        "large": "drivers/D1_5503/assets/images/large.png",
-        "small": "drivers/D1_5503/assets/images/small.png"
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": ["onoff"]
-          },
-          {
-            "id": "slider",
-            "capabilities": ["dim"]
-          },
-          {
-            "id": "sensor",
-            "capabilities": ["measure_power"]
-          }
-        ]
-      },
-      "zigbee": {
-        "manufacturerName": "ubisys",
-        "productId": "D1 (5503)",
-        "deviceId": 257,
-        "profileId": 260,
-        "learnmode": {
-          "instruction": {
-            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n D1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
-            "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n D1 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
-          }
-        }
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Information"
-          },
-          "children": [
-            {
-              "id": "dateCode",
-              "type": "text",
-              "label": {
-                "en": "Manufactured"
-              },
-              "value": ""
-            },
-            {
-              "id": "hwVersion",
-              "type": "number",
-              "label": {
-                "en": "Hardware version"
-              },
-              "value": 0
-            }
-          ]
+      {
+        "title": {
+          "en": "Turn Second Switch On",
+          "nl": "Zet 2. Schakelaar aan"
         },
-        {
-          "id": "transtime",
-          "type": "number",
-          "label": {
-            "en": "Transition time in seconds",
-            "nl": "Transitie tijd in seconden"
-          },
-          "value": 1,
-          "min": 0,
-          "max": 3
-        },
-        {
-          "id": "min_dim_level",
-          "type": "number",
-          "label": {
-            "en": "Minimum dimming level"
-          },
-          "value": 1,
-          "min": 1,
-          "max": 10
-        }
-      ]
-    },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=S2_5502||S2R_5502"
+          }
+        ],
+        "id": "turn_on_switch2"
+      }
+    ]
+  },
+  "drivers": [
     {
-      "id": "D1R_5503",
       "class": "light",
-      "capabilities": ["onoff", "dim", "measure_power"],
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
       "name": {
         "en": "D1-R RAILDIMMER"
       },
       "images": {
-        "large": "drivers/D1R_5503/assets/images/large.png",
-        "small": "drivers/D1R_5503/assets/images/small.png"
+        "large": "/drivers/D1R_5503/assets/images/large.png",
+        "small": "/drivers/D1R_5503/assets/images/small.png"
       },
       "mobile": {
         "components": [
           {
             "id": "icon",
-            "capabilities": ["onoff"]
+            "capabilities": [
+              "onoff"
+            ]
           },
           {
             "id": "slider",
-            "capabilities": ["dim"]
+            "capabilities": [
+              "dim"
+            ]
           },
           {
             "id": "sensor",
-            "capabilities": ["measure_power"]
+            "capabilities": [
+              "measure_power"
+            ]
           }
         ]
       },
@@ -342,32 +206,118 @@
           "min": 1,
           "max": 10
         }
-      ]
+      ],
+      "id": "D1R_5503"
     },
     {
-      "id": "S2_5502",
-      "class": "socket",
-      "capabilities": ["onoff", "onoff.1", "measure_power"],
-      "capabilitiesOptions": {
-        "onoff": {
-          "title": {
-            "en": "Switch 1"
-          },
-          "greyout": false
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          },
-          "greyout": false
-        }
-      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_power"
+      ],
       "name": {
-        "en": "S2 POWER SWITCH"
+        "en": "D1 DIMMER"
       },
       "images": {
-        "large": "drivers/S2_5502/assets/images/large.png",
-        "small": "drivers/S2_5502/assets/images/small.png"
+        "large": "/drivers/D1_5503/assets/images/large.png",
+        "small": "/drivers/D1_5503/assets/images/small.png"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "dim"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power"
+            ]
+          }
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": "ubisys",
+        "productId": "D1 (5503)",
+        "deviceId": 257,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n D1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
+            "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n D1 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Information"
+          },
+          "children": [
+            {
+              "id": "dateCode",
+              "type": "text",
+              "label": {
+                "en": "Manufactured"
+              },
+              "value": ""
+            },
+            {
+              "id": "hwVersion",
+              "type": "number",
+              "label": {
+                "en": "Hardware version"
+              },
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "transtime",
+          "type": "number",
+          "label": {
+            "en": "Transition time in seconds",
+            "nl": "Transitie tijd in seconden"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 3
+        },
+        {
+          "id": "min_dim_level",
+          "type": "number",
+          "label": {
+            "en": "Minimum dimming level"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 10
+        }
+      ],
+      "id": "D1_5503"
+    },
+    {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "name": {
+        "en": "S1 RAILSWITCH"
+      },
+      "images": {
+        "large": "/drivers/S1R_5501/assets/images/large.png",
+        "small": "/drivers/S1R_5501/assets/images/small.png"
       },
       "mobile": {
         "components": [
@@ -376,32 +326,29 @@
           },
           {
             "id": "toggle",
-            "capabilities": ["onoff"],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "toggle",
-            "capabilities": ["onoff.1"],
+            "capabilities": [
+              "onoff"
+            ],
             "options": {
               "showTitle": true
             }
           },
           {
             "id": "sensor",
-            "capabilities": ["measure_power"]
+            "capabilities": [
+              "measure_power"
+            ]
           }
         ]
       },
       "zigbee": {
         "manufacturerName": "ubisys",
-        "productId": "S2 (5502)",
-        "deviceId": 266,
+        "productId": "S1-R (5601)",
+        "deviceId": 9,
         "profileId": 260,
         "learnmode": {
           "instruction": {
-            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S2 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
+            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
             "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
           }
         }
@@ -431,12 +378,91 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "S1R_5501"
     },
     {
-      "id": "S2R_5502",
       "class": "socket",
-      "capabilities": ["onoff", "onoff.1", "measure_power"],
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "name": {
+        "en": "S1 POWER SWITCH"
+      },
+      "images": {
+        "large": "/drivers/S1_5501/assets/images/large.png",
+        "small": "/drivers/S1_5501/assets/images/small.png"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power"
+            ]
+          }
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": "ubisys",
+        "productId": "S1 (5501)",
+        "deviceId": 9,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
+            "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Information"
+          },
+          "children": [
+            {
+              "id": "dateCode",
+              "type": "text",
+              "label": {
+                "en": "Manufactured"
+              },
+              "value": ""
+            },
+            {
+              "id": "hwVersion",
+              "type": "number",
+              "label": {
+                "en": "Hardware version"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "id": "S1_5501"
+    },
+    {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.1",
+        "measure_power"
+      ],
       "capabilitiesOptions": {
         "onoff": {
           "title": {
@@ -455,8 +481,8 @@
         "en": "S2 RAILSWITCH"
       },
       "images": {
-        "large": "drivers/S2R_5502/assets/images/large.png",
-        "small": "drivers/S2R_5502/assets/images/small.png"
+        "large": "/drivers/S2R_5502/assets/images/large.png",
+        "small": "/drivers/S2R_5502/assets/images/small.png"
       },
       "mobile": {
         "components": [
@@ -465,21 +491,27 @@
           },
           {
             "id": "toggle",
-            "capabilities": ["onoff"],
+            "capabilities": [
+              "onoff"
+            ],
             "options": {
               "showTitle": true
             }
           },
           {
             "id": "toggle",
-            "capabilities": ["onoff.1"],
+            "capabilities": [
+              "onoff.1"
+            ],
             "options": {
               "showTitle": true
             }
           },
           {
             "id": "sensor",
-            "capabilities": ["measure_power"]
+            "capabilities": [
+              "measure_power"
+            ]
           }
         ]
       },
@@ -520,85 +552,107 @@
             }
           ]
         }
-      ]
-    }
-  ],
-  "flow": {
-    "triggers": [
-      {
-      "id": "switch2_turned_on",
-      "title": {
-        "en": "Second Switch Turned On",
-        "nl": "2. Schakelaar Aangezet"
-      },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=S2_5502||S2R_5502"
-        }
-      ]
+      ],
+      "id": "S2R_5502"
     },
     {
-      "id": "switch2_turned_off",
-      "title": {
-        "en": "Second Switch Turned Off",
-        "nl": "2. Schakelaar Uitgezet"
-      },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=S2_5502||S2R_5502"
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.1",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Switch 1"
+          },
+          "greyout": false
+        },
+        "onoff.1": {
+          "title": {
+            "en": "Switch 2"
+          },
+          "greyout": false
         }
-      ]
-    }
-  ],
-  "conditions": [
-    {
-      "id": "switch2_is_on",
-      "title": {
-        "en": "Second switch is !{{on|off}}",
-        "nl": "2. schakelaar is !{{ingeschakeld|uitgeschakeld}}"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=S2_5502||S2R_5502"
+      "name": {
+        "en": "S2 POWER SWITCH"
+      },
+      "images": {
+        "large": "/drivers/S2_5502/assets/images/large.png",
+        "small": "/drivers/S2_5502/assets/images/small.png"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon"
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff.1"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power"
+            ]
+          }
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": "ubisys",
+        "productId": "S2 (5502)",
+        "deviceId": 266,
+        "profileId": 260,
+        "learnmode": {
+          "instruction": {
+            "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S2 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
+            "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+          }
         }
-      ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Information"
+          },
+          "children": [
+            {
+              "id": "dateCode",
+              "type": "text",
+              "label": {
+                "en": "Manufactured"
+              },
+              "value": ""
+            },
+            {
+              "id": "hwVersion",
+              "type": "number",
+              "label": {
+                "en": "Hardware version"
+              },
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "id": "S2_5502"
     }
-  ],
-  "actions":  [
-      {
-      "id": "turn_on_switch2",
-      "title": {
-        "en": "Turn Second Switch On",
-        "nl": "Zet 2. Schakelaar aan"
-     },
-    "args": [
-      {
-        "type": "device",
-        "name": "device",
-        "filter": "driver_id=S2_5502||S2R_5502"
-      }
-    ]
-  },
-  {
-    "id": "turn_off_switch2",
-    "title": {
-      "en": "Turn Second Switch Off",
-      "nl": "Zet 2. Schakelaar uit"
-    },
-    "args": [
-      {
-        "type": "device",
-        "name": "device",
-        "filter": "driver_id=S2_5502||S2R_5502"
-      }
-    ]
-  }
   ]
-  }
 }

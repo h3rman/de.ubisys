@@ -1,0 +1,86 @@
+{
+  "class": "light",
+  "capabilities": [ "onoff", "dim", "measure_power" ],
+  "name": {
+    "en": "D1 DIMMER"
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "mobile": {
+    "components": [
+      {
+        "id": "icon",
+        "capabilities": [ "onoff" ]
+      },
+      {
+        "id": "slider",
+        "capabilities": [ "dim" ]
+      },
+      {
+        "id": "sensor",
+        "capabilities": [ "measure_power" ]
+      }
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": "ubisys",
+    "productId": "D1 (5503)",
+    "deviceId": 257,
+    "profileId": 260,
+    "learnmode": {
+      "instruction": {
+        "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n D1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
+        "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n D1 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Information"
+      },
+      "children": [
+        {
+          "id": "dateCode",
+          "type": "text",
+          "label": {
+            "en": "Manufactured"
+          },
+          "value": ""
+        },
+        {
+          "id": "hwVersion",
+          "type": "number",
+          "label": {
+            "en": "Hardware version"
+          },
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "transtime",
+      "type": "number",
+      "label": {
+        "en": "Transition time in seconds",
+        "nl": "Transitie tijd in seconden"
+      },
+      "value": 1,
+      "min": 0,
+      "max": 3
+    },
+    {
+      "id": "min_dim_level",
+      "type": "number",
+      "label": {
+        "en": "Minimum dimming level"
+      },
+      "value": 1,
+      "min": 1,
+      "max": 10
+    }
+  ]
+}

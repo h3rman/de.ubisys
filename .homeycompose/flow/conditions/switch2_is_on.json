@@ -1,0 +1,13 @@
+{
+  "title": {
+    "en": "Second switch is !{{on|off}}",
+    "nl": "2. schakelaar is !{{ingeschakeld|uitgeschakeld}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=S2_5502||S2R_5502"
+    }
+  ]
+}

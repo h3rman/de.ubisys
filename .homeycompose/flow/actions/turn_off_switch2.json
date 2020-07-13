@@ -1,0 +1,14 @@
+{
+  "id": "turn_off_switch2",
+  "title": {
+    "en": "Turn Second Switch Off",
+    "nl": "Zet 2. Schakelaar uit"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=S2_5502||S2R_5502"
+    }
+  ]
+}

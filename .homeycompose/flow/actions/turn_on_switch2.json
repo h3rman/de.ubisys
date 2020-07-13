@@ -1,0 +1,13 @@
+{
+  "title": {
+    "en": "Turn Second Switch On",
+    "nl": "Zet 2. Schakelaar aan"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=S2_5502||S2R_5502"
+    }
+  ]
+}
