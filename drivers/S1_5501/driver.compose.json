@@ -1,6 +1,6 @@
 {
   "class": "socket",
-  "capabilities": [ "onoff", "measure_power" ],
+  "capabilities": [ "onoff" ],
   "name": {
     "en": "S1 POWER SWITCH"
   },
@@ -29,12 +29,44 @@
   "zigbee": {
     "manufacturerName": "ubisys",
     "productId": "S1 (5501)",
-    "deviceId": 9,
-    "profileId": 260,
     "learnmode": {
       "instruction": {
         "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n S1 also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
         "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n S2 kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "3": {
+        "clusters": [
+          1794,
+          2820
+        ],
+        "bindings": [
+          1794,
+          2820
+        ]
       }
     }
   },
