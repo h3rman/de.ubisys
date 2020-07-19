@@ -5,11 +5,15 @@ Beware that this release does not offer the possibility to configure the input-t
 This isn't supported yet in the ZigBee implementation by Athom.
 So read the manuals of the devices at www.ubisys.de in order to know if you have the switches that are by default set in the configuration of the devices on delivery or ask the supplier if he can set it for you.
 
+# Under development (SDK3 branch)
+
+* Rewrite of drivers to support Homey v5.0 (SDK3).
+* Added support to change Input Actions (how the physical inputs behave).
+
 # 1.0.1
 
-Added S1 POWERSWITCH and S1-R RAILSWITCH
-
-Fixed flows for S2 and S2-R
+* Added S1 POWERSWITCH and S1-R RAILSWITCH
+* Fixed flows for S2 and S2-R
 
 # 1.0.2
 
