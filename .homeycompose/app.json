@@ -1,36 +1,40 @@
 {
-    "id": "de.ubisys",
-    "sdk": 2,
-    "name": {
-        "en": "Ubisys SmartHome ZigBee Devices"
-    },
-    "description": {
-        "en": "Support for Ubisys SmartHome ZigBee Devices"
-    },
-    "category": "lights",
-    "version": "1.0.2",
-    "compatibility": ">=1.5.4",
-    "author": {
-        "name": "Martin Brasse",
-        "email": "kasteleman@gmail.com"
-    },
-    "contributors": {
-      "developers": [
-          {
-              "name": "Richard Barkestam",
-              "email": "richard@barkestam.se"
-          }
-      ]
-    },
-    "contributing": {
-      "donate": {
-        "paypal": {
-          "username": "kasteleman"
-        }
+  "id": "de.ubisys",
+  "sdk": 3,
+  "name": {
+    "en": "Ubisys SmartHome ZigBee Devices"
+  },
+  "description": {
+    "en": "Support for Ubisys SmartHome ZigBee Devices"
+  },
+  "category": "lights",
+  "version": "1.0.2",
+  "compatibility": ">=5.0.0",
+  "author": {
+    "name": "Martin Brasse",
+    "email": "kasteleman@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Richard Barkestam",
+        "email": "richard@barkestam.se"
+      },
+      {
+        "name": "Marcus Hermansson",
+        "email": "marcus.hermansson@signalare.se"
       }
-    },
-    "images": {
-      "large": "/assets/images/large.png",
-      "small": "/assets/images/small.png"
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "kasteleman"
+      }
     }
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  }
 }
