@@ -1,8 +1,8 @@
 'use strict';
 
-const Dimmer = require('../../lib/dimmer.js');
+const Ubisys = require('../../lib/ubisys.js');
 
-class D1_5503 extends Dimmer {
+class D1_5503 extends Ubisys {
 
 }
 

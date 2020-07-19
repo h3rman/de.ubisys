@@ -1,8 +1,8 @@
 'use strict';
 
-const Switch2 = require('../../lib/switch2.js');
+const Ubisys = require('../../lib/ubisys.js');
 
-class S2R_5502 extends Switch2 {
+class S2R_5502 extends Ubisys {
 
 }
 
