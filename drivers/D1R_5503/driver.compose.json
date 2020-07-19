@@ -27,12 +27,64 @@
   "zigbee": {
     "manufacturerName": "ubisys",
     "productId": "D1-R (5603)",
-    "deviceId": 257,
-    "profileId": 260,
     "learnmode": {
       "instruction": {
         "en": "The device will search for an open ZigBee network to join when you first apply power to it.\n\n D1-R also offers a push-button behind a tiny hole in the front-face of the device in order to start the inclusion manually.",
         "nl": "De module zal, zodra deze is voorzien van stroom, op zoek gaan naar een ZigBee netwerk.\n\n D1-R kan ook aan een ZigBee network worden toegevoegd door een knopje in een klein gaatje aan de voorkant van de module kort in te drukken."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          6,
+          8,
+          769,
+          64513
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "2": {
+        "clusters": [
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "3": {
+        "clusters": [
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "4": {
+        "clusters": [
+          1794,
+          2820
+        ],
+        "bindings": [
+          1794,
+          2820
+        ]
+      },
+      "232": {
+        "clusters": [
+          64512
+        ],
+        "bindinngs": [
+
+        ]
       }
     }
   },
